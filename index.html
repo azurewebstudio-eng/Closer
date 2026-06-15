@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DM Closer AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>DM Closer AI</h1>
+    <p>Generate high-converting sales replies for customer DMs.</p>
+
+    <label>Product Name</label>
+    <input type="text" id="product" placeholder="Oversized T-Shirt">
+
+    <label>Product Price</label>
+    <input type="text" id="price" placeholder="799">
+
+    <label>Customer Message</label>
+    <textarea id="message" placeholder="How do I order?"></textarea>
+
+    <button onclick="generateReply()">
+        Generate Reply
+    </button>
+
+    <div id="loading" style="display:none;">
+        Generating...
+    </div>
+
+    <div id="output"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
