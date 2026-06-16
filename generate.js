@@ -38,13 +38,9 @@ Customer Message: ${message}
 Generate:
 
 1. Friendly Reply
-
 2. Sales Reply
-
 3. Premium Reply
-
 4. Urgency Reply
-
 5. Follow-Up Message
 
 Keep replies short, natural, human and conversion-focused.
@@ -59,16 +55,23 @@ Keep replies short, natural, human and conversion-focused.
 
         const data = await response.json();
 
+        console.log("Groq Response:", data);
+
+        if (!response.ok) {
+            console.log("Groq Error:", data);
+            return res.status(response.status).json(data);
+        }
+
         return res.status(200).json({
             reply: data.choices[0].message.content
         });
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Server Error:", error);
 
         return res.status(500).json({
-            error: "Failed to generate reply"
+            error: error.message
         });
     }
 }
